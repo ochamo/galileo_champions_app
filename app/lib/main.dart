@@ -14,7 +14,7 @@ void main() async {
     [DeviceOrientation.portraitUp],
   );
 
-  await initializeInjectedDepedencies();
+  await initializeInjectedDependencies();
   runZonedGuarded(() => runApp(App()), (error, stack) {
     if (!kReleaseMode) {
       getIt<Logger>().e(error);

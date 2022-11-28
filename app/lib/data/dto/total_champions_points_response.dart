@@ -14,4 +14,9 @@ class TotalChampionsPointsResponse {
     required this.message,
     required this.data,
   });
+
+  factory TotalChampionsPointsResponse.fromJson(Map<String, dynamic> json) =>
+      _$TotalChampionsPointsResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TotalChampionsPointsResponseToJson(this);
 }
