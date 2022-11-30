@@ -8,12 +8,14 @@ import 'package:galileo_champions/feature/my_points/views/detail_points_screen.d
 import 'package:galileo_champions/feature/my_profile/my_profile_screen.dart';
 import 'package:galileo_champions/feature/register_user/register_user_screen.dart';
 import 'package:galileo_champions/feature/rockstar_program/rockstar_screen.dart';
+import 'package:galileo_champions/feature/splash/check_splash_screen.dart';
 import 'package:galileo_champions/feature/splash/splash_screen.dart';
 
 part 'app_router.gr.dart';
 
 @MaterialAutoRouter(replaceInRouteName: 'Screen,Route', routes: <AutoRoute>[
-  AutoRoute(path: Routes.root, page: SplashScreen, initial: true),
+  AutoRoute(path: Routes.root, page: CheckSplashScreen, initial: true),
+  AutoRoute(path: Routes.splash, page: SplashScreen, initial: true),
   AutoRoute(path: Routes.registerUser, page: RegisterUserScreen),
   AutoRoute(path: Routes.home, page: HomeScreen),
   AutoRoute(path: Routes.myPoints, page: MyPointsScreen),

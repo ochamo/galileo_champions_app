@@ -12,15 +12,12 @@ class RegisterUserDto {
   final String lastname;
   @JsonKey(name: "password")
   final String password;
-  @JsonKey(name: "isVerified")
-  final bool isVerified;
 
   RegisterUserDto({
     required this.email,
     required this.firstname,
     required this.lastname,
     required this.password,
-    this.isVerified = true,
   });
 
   factory RegisterUserDto.fromJson(Map<String, dynamic> json) =>

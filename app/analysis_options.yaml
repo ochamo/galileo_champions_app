@@ -33,7 +33,6 @@ dart_code_metrics:
     - no-boolean-literal-compare
     - no-empty-block
     - prefer-trailing-comma
-    - prefer-conditional-expressions
     - no-equal-then-else
     - prefer-immediate-return
     - prefer-match-file-name:
@@ -47,7 +46,8 @@ dart_code_metrics:
     - avoid-global-state
     - avoid-throw-in-catch-block
     - avoid-non-null-assertion
-    - avoid-nested-conditional-expressions
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 4
     - prefer-correct-type-name:
         min-length: 3
     # flutter

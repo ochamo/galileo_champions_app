@@ -2,9 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:galileo_champions/core/assets.dart';
+import 'package:galileo_champions/core/constants.dart';
 import 'package:galileo_champions/core/dimens.dart';
 import 'package:galileo_champions/core/navigation/routes.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TutorialPage2 extends StatelessWidget {
   @override
@@ -34,12 +36,24 @@ class TutorialPage2 extends StatelessWidget {
           height: AppDimens.minHeightButtons,
           child: ElevatedButton(
             onPressed: () {
-              AutoRouter.of(context).replaceNamed(Routes.login);
+              saveSplashStatus(context);
             },
             child: Text("Continuar"),
           ),
         ),
       ],
     );
+  }
+
+  void saveSplashStatus(BuildContext context) async {
+    final prefs = await SharedPreferences.getInstance();
+
+    await prefs.setBool(Constants.hideSplash, true);
+
+    hideScreen(context);
+  }
+
+  void hideScreen(BuildContext context) {
+    AutoRouter.of(context).replaceNamed(Routes.login);
   }
 }

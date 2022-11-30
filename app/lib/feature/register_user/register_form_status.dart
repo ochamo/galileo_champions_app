@@ -5,5 +5,7 @@ enum RegisterFormStatus {
   emailInvalid,
   namesInvalid,
   lastnamesInvalid,
-  empty
+  empty,
+  success,
+  failed
 }

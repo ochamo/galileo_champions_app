@@ -17,6 +17,12 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CheckSplashRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+        routeData: routeData,
+        child: CheckSplashScreen(),
+      );
+    },
     SplashRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
@@ -42,15 +48,19 @@ class _$AppRouter extends RootStackRouter {
       );
     },
     DetailPointsRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailPointsRouteArgs>();
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: const DetailPointsScreen(),
+        child: DetailPointsScreen(
+          key: args.key,
+          id: args.id,
+        ),
       );
     },
     MyProfileRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
         routeData: routeData,
-        child: MyProfileScreen(),
+        child: const MyProfileScreen(),
       );
     },
     RockstarRoute.name: (routeData) {
@@ -70,8 +80,12 @@ class _$AppRouter extends RootStackRouter {
   @override
   List<RouteConfig> get routes => [
         RouteConfig(
-          SplashRoute.name,
+          CheckSplashRoute.name,
           path: '/',
+        ),
+        RouteConfig(
+          SplashRoute.name,
+          path: '/splash',
         ),
         RouteConfig(
           RegisterUserRoute.name,
@@ -105,12 +119,24 @@ class _$AppRouter extends RootStackRouter {
 }
 
 /// generated route for
+/// [CheckSplashScreen]
+class CheckSplashRoute extends PageRouteInfo<void> {
+  const CheckSplashRoute()
+      : super(
+          CheckSplashRoute.name,
+          path: '/',
+        );
+
+  static const String name = 'CheckSplashRoute';
+}
+
+/// generated route for
 /// [SplashScreen]
 class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute()
       : super(
           SplashRoute.name,
-          path: '/',
+          path: '/splash',
         );
 
   static const String name = 'SplashRoute';
@@ -154,14 +180,36 @@ class MyPointsRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [DetailPointsScreen]
-class DetailPointsRoute extends PageRouteInfo<void> {
-  const DetailPointsRoute()
-      : super(
+class DetailPointsRoute extends PageRouteInfo<DetailPointsRouteArgs> {
+  DetailPointsRoute({
+    Key? key,
+    required int id,
+  }) : super(
           DetailPointsRoute.name,
           path: '/detailPoints',
+          args: DetailPointsRouteArgs(
+            key: key,
+            id: id,
+          ),
         );
 
   static const String name = 'DetailPointsRoute';
+}
+
+class DetailPointsRouteArgs {
+  const DetailPointsRouteArgs({
+    this.key,
+    required this.id,
+  });
+
+  final Key? key;
+
+  final int id;
+
+  @override
+  String toString() {
+    return 'DetailPointsRouteArgs{key: $key, id: $id}';
+  }
 }
 
 /// generated route for

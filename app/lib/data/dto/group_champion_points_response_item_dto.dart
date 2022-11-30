@@ -5,14 +5,14 @@ part 'group_champion_points_response_item_dto.g.dart';
 
 @JsonSerializable()
 class GroupChampionPointsResponseItemDto {
-  final String id;
+  final int id;
   final String redemptionCenter;
   final String student;
   final int year;
   final int points;
   final String reason;
   final String modifiedBy;
-  final DateTime modifiedAt;
+  final String modifiedAt;
   @JsonKey(includeIfNull: false)
   final List<PointsLogsResponseDto>? logs;
 

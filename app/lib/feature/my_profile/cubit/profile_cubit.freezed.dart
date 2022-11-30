@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'login_cubit.dart';
+part of 'profile_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,29 +15,27 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LoginState {
+mixin _$ProfileCubitState {
   String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get lastname => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
-  LoginFormStatus get formStatus => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)
+    required TResult Function(
+            String email, String name, String lastname, bool loading)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult? Function(String email, String name, String lastname, bool loading)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult Function(String email, String name, String lastname, bool loading)?
         initial,
     required TResult orElse(),
   }) =>
@@ -60,27 +58,23 @@ mixin _$LoginState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginStateCopyWith<LoginState> get copyWith =>
+  $ProfileCubitStateCopyWith<ProfileCubitState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
-      _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $ProfileCubitStateCopyWith<$Res> {
+  factory $ProfileCubitStateCopyWith(
+          ProfileCubitState value, $Res Function(ProfileCubitState) then) =
+      _$ProfileCubitStateCopyWithImpl<$Res, ProfileCubitState>;
   @useResult
-  $Res call(
-      {String email,
-      String password,
-      bool loading,
-      LoginFormStatus formStatus});
+  $Res call({String email, String name, String lastname, bool loading});
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$ProfileCubitStateCopyWithImpl<$Res, $Val extends ProfileCubitState>
+    implements $ProfileCubitStateCopyWith<$Res> {
+  _$ProfileCubitStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -91,48 +85,45 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   @override
   $Res call({
     Object? email = null,
-    Object? password = null,
+    Object? name = null,
+    Object? lastname = null,
     Object? loading = null,
-    Object? formStatus = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastname: null == lastname
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
               as String,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      formStatus: null == formStatus
-          ? _value.formStatus
-          : formStatus // ignore: cast_nullable_to_non_nullable
-              as LoginFormStatus,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res>
+    implements $ProfileCubitStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String email,
-      String password,
-      bool loading,
-      LoginFormStatus formStatus});
+  $Res call({String email, String name, String lastname, bool loading});
 }
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Initial>
+    extends _$ProfileCubitStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -141,27 +132,27 @@ class __$$_InitialCopyWithImpl<$Res>
   @override
   $Res call({
     Object? email = null,
-    Object? password = null,
+    Object? name = null,
+    Object? lastname = null,
     Object? loading = null,
-    Object? formStatus = null,
   }) {
     return _then(_$_Initial(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastname: null == lastname
+          ? _value.lastname
+          : lastname // ignore: cast_nullable_to_non_nullable
               as String,
       loading: null == loading
           ? _value.loading
           : loading // ignore: cast_nullable_to_non_nullable
               as bool,
-      formStatus: null == formStatus
-          ? _value.formStatus
-          : formStatus // ignore: cast_nullable_to_non_nullable
-              as LoginFormStatus,
     ));
   }
 }
@@ -171,26 +162,26 @@ class __$$_InitialCopyWithImpl<$Res>
 class _$_Initial implements _Initial {
   const _$_Initial(
       {this.email = "",
-      this.password = "",
-      this.loading = false,
-      this.formStatus = LoginFormStatus.empty});
+      this.name = "",
+      this.lastname = "",
+      this.loading = true});
 
   @override
   @JsonKey()
   final String email;
   @override
   @JsonKey()
-  final String password;
+  final String name;
+  @override
+  @JsonKey()
+  final String lastname;
   @override
   @JsonKey()
   final bool loading;
-  @override
-  @JsonKey()
-  final LoginFormStatus formStatus;
 
   @override
   String toString() {
-    return 'LoginState.initial(email: $email, password: $password, loading: $loading, formStatus: $formStatus)';
+    return 'ProfileCubitState.initial(email: $email, name: $name, lastname: $lastname, loading: $loading)';
   }
 
   @override
@@ -199,16 +190,14 @@ class _$_Initial implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.formStatus, formStatus) ||
-                other.formStatus == formStatus));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.lastname, lastname) ||
+                other.lastname == lastname) &&
+            (identical(other.loading, loading) || other.loading == loading));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, password, loading, formStatus);
+  int get hashCode => Object.hash(runtimeType, email, name, lastname, loading);
 
   @JsonKey(ignore: true)
   @override
@@ -219,33 +208,31 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)
+    required TResult Function(
+            String email, String name, String lastname, bool loading)
         initial,
   }) {
-    return initial(email, password, loading, formStatus);
+    return initial(email, name, lastname, loading);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult? Function(String email, String name, String lastname, bool loading)?
         initial,
   }) {
-    return initial?.call(email, password, loading, formStatus);
+    return initial?.call(email, name, lastname, loading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult Function(String email, String name, String lastname, bool loading)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(email, password, loading, formStatus);
+      return initial(email, name, lastname, loading);
     }
     return orElse();
   }
@@ -279,21 +266,21 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements LoginState {
+abstract class _Initial implements ProfileCubitState {
   const factory _Initial(
       {final String email,
-      final String password,
-      final bool loading,
-      final LoginFormStatus formStatus}) = _$_Initial;
+      final String name,
+      final String lastname,
+      final bool loading}) = _$_Initial;
 
   @override
   String get email;
   @override
-  String get password;
+  String get name;
+  @override
+  String get lastname;
   @override
   bool get loading;
-  @override
-  LoginFormStatus get formStatus;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

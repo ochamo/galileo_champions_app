@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'login_cubit.dart';
+part of 'detail_points_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,29 +15,25 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LoginState {
-  String get email => throw _privateConstructorUsedError;
-  String get password => throw _privateConstructorUsedError;
-  bool get loading => throw _privateConstructorUsedError;
-  LoginFormStatus get formStatus => throw _privateConstructorUsedError;
+mixin _$DetailPointsCubitState {
+  DetailsPointsStatus get status => throw _privateConstructorUsedError;
+  Map<String, dynamic> get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)
+    required TResult Function(
+            DetailsPointsStatus status, Map<String, dynamic> data)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult? Function(DetailsPointsStatus status, Map<String, dynamic> data)?
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult Function(DetailsPointsStatus status, Map<String, dynamic> data)?
         initial,
     required TResult orElse(),
   }) =>
@@ -60,27 +56,24 @@ mixin _$LoginState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $LoginStateCopyWith<LoginState> get copyWith =>
+  $DetailPointsCubitStateCopyWith<DetailPointsCubitState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoginStateCopyWith<$Res> {
-  factory $LoginStateCopyWith(
-          LoginState value, $Res Function(LoginState) then) =
-      _$LoginStateCopyWithImpl<$Res, LoginState>;
+abstract class $DetailPointsCubitStateCopyWith<$Res> {
+  factory $DetailPointsCubitStateCopyWith(DetailPointsCubitState value,
+          $Res Function(DetailPointsCubitState) then) =
+      _$DetailPointsCubitStateCopyWithImpl<$Res, DetailPointsCubitState>;
   @useResult
-  $Res call(
-      {String email,
-      String password,
-      bool loading,
-      LoginFormStatus formStatus});
+  $Res call({DetailsPointsStatus status, Map<String, dynamic> data});
 }
 
 /// @nodoc
-class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
-    implements $LoginStateCopyWith<$Res> {
-  _$LoginStateCopyWithImpl(this._value, this._then);
+class _$DetailPointsCubitStateCopyWithImpl<$Res,
+        $Val extends DetailPointsCubitState>
+    implements $DetailPointsCubitStateCopyWith<$Res> {
+  _$DetailPointsCubitStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,49 +83,36 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
-    Object? password = null,
-    Object? loading = null,
-    Object? formStatus = null,
+    Object? status = null,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      formStatus: null == formStatus
-          ? _value.formStatus
-          : formStatus // ignore: cast_nullable_to_non_nullable
-              as LoginFormStatus,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DetailsPointsStatus,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res>
+    implements $DetailPointsCubitStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String email,
-      String password,
-      bool loading,
-      LoginFormStatus formStatus});
+  $Res call({DetailsPointsStatus status, Map<String, dynamic> data});
 }
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_Initial>
+    extends _$DetailPointsCubitStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -140,28 +120,18 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = null,
-    Object? password = null,
-    Object? loading = null,
-    Object? formStatus = null,
+    Object? status = null,
+    Object? data = null,
   }) {
     return _then(_$_Initial(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      password: null == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String,
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      formStatus: null == formStatus
-          ? _value.formStatus
-          : formStatus // ignore: cast_nullable_to_non_nullable
-              as LoginFormStatus,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DetailsPointsStatus,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
     ));
   }
 }
@@ -170,27 +140,24 @@ class __$$_InitialCopyWithImpl<$Res>
 
 class _$_Initial implements _Initial {
   const _$_Initial(
-      {this.email = "",
-      this.password = "",
-      this.loading = false,
-      this.formStatus = LoginFormStatus.empty});
+      {this.status = DetailsPointsStatus.loading,
+      final Map<String, dynamic> data = const {}})
+      : _data = data;
 
   @override
   @JsonKey()
-  final String email;
+  final DetailsPointsStatus status;
+  final Map<String, dynamic> _data;
   @override
   @JsonKey()
-  final String password;
-  @override
-  @JsonKey()
-  final bool loading;
-  @override
-  @JsonKey()
-  final LoginFormStatus formStatus;
+  Map<String, dynamic> get data {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_data);
+  }
 
   @override
   String toString() {
-    return 'LoginState.initial(email: $email, password: $password, loading: $loading, formStatus: $formStatus)';
+    return 'DetailPointsCubitState.initial(status: $status, data: $data)';
   }
 
   @override
@@ -198,17 +165,13 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.password, password) ||
-                other.password == password) &&
-            (identical(other.loading, loading) || other.loading == loading) &&
-            (identical(other.formStatus, formStatus) ||
-                other.formStatus == formStatus));
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, email, password, loading, formStatus);
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -219,33 +182,31 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)
+    required TResult Function(
+            DetailsPointsStatus status, Map<String, dynamic> data)
         initial,
   }) {
-    return initial(email, password, loading, formStatus);
+    return initial(status, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult? Function(DetailsPointsStatus status, Map<String, dynamic> data)?
         initial,
   }) {
-    return initial?.call(email, password, loading, formStatus);
+    return initial?.call(status, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String email, String password, bool loading,
-            LoginFormStatus formStatus)?
+    TResult Function(DetailsPointsStatus status, Map<String, dynamic> data)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(email, password, loading, formStatus);
+      return initial(status, data);
     }
     return orElse();
   }
@@ -279,21 +240,15 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements LoginState {
+abstract class _Initial implements DetailPointsCubitState {
   const factory _Initial(
-      {final String email,
-      final String password,
-      final bool loading,
-      final LoginFormStatus formStatus}) = _$_Initial;
+      {final DetailsPointsStatus status,
+      final Map<String, dynamic> data}) = _$_Initial;
 
   @override
-  String get email;
+  DetailsPointsStatus get status;
   @override
-  String get password;
-  @override
-  bool get loading;
-  @override
-  LoginFormStatus get formStatus;
+  Map<String, dynamic> get data;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

@@ -18,6 +18,7 @@ class RegisterUserCubit extends Cubit<RegisterCubitState> {
   }) : super(const RegisterCubitState.current());
 
   void createAccount() async {
+    emit(state.copyWith(loading: true));
     try {
       var registerUserDto = RegisterUserDto(
         email: state.email,
@@ -32,9 +33,16 @@ class RegisterUserCubit extends Cubit<RegisterCubitState> {
       );
       Map<String, dynamic> map = response.data ?? {};
       if (map["success"]) {
-        print("hello");
+        emit(state.copyWith(
+          formStatus: RegisterFormStatus.success,
+          loading: false,
+        ));
       }
     } on Exception catch (e) {
+      emit(state.copyWith(
+        formStatus: RegisterFormStatus.failed,
+        loading: false,
+      ));
       logger.e("Error al registrar el usuario");
       logger.e(e);
     }
