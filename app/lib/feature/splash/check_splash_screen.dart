@@ -36,7 +36,12 @@ class _CheckSplashScreenState extends State<CheckSplashScreen> {
     }
   }
 
-  void hideScreen() {
-    AutoRouter.of(context).replaceNamed(Routes.login);
+  void hideScreen() async {
+    var prefs = await SharedPreferences.getInstance();
+    if (prefs.getString(Constants.token) == null) {
+      AutoRouter.of(context).replaceNamed(Routes.login);
+    } else {
+      AutoRouter.of(context).replaceNamed(Routes.home);
+    }
   }
 }

@@ -3,11 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:galileo_champions/core/assets.dart';
+import 'package:galileo_champions/core/constants.dart';
 import 'package:galileo_champions/core/dimens.dart';
 import 'package:galileo_champions/core/navigation/routes.dart';
 import 'package:galileo_champions/di/injector.dart';
 import 'package:galileo_champions/feature/home/cubit/home_screen_cubit.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -99,6 +101,16 @@ class _HomeScreenBodyState extends State<_HomeScreenBody> {
                     onTap: () {
                       AutoRouter.of(context).pop();
                       AutoRouter.of(context).pushNamed(Routes.myProfile);
+                    },
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.lock),
+                    title: const Text("Cerrar sesión"),
+                    onTap: () async {
+                      AutoRouter.of(context).pop();
+                      var prefs = await SharedPreferences.getInstance();
+                      await prefs.remove(Constants.token);
+                      AutoRouter.of(context).replaceNamed(Routes.login);
                     },
                   ),
                 ],

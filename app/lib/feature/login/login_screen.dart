@@ -8,6 +8,7 @@ import 'package:galileo_champions/core/custom_dialog.dart';
 import 'package:galileo_champions/core/dimens.dart';
 import 'package:galileo_champions/core/navigation/routes.dart';
 import 'package:galileo_champions/feature/login/cubit/login_cubit.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -33,6 +34,7 @@ class _LoginScreenBodyState extends State<_LoginScreenBody> {
   late FocusNode passwordFocusNode;
   late TextEditingController emailController;
   late TextEditingController passwordController;
+  String versionName = "";
 
   @override
   void initState() {
@@ -42,6 +44,8 @@ class _LoginScreenBodyState extends State<_LoginScreenBody> {
     passwordFocusNode = FocusNode();
     emailController = TextEditingController();
     passwordController = TextEditingController();
+    getVersion();
+
   }
 
   @override
@@ -152,7 +156,7 @@ class _LoginScreenBodyState extends State<_LoginScreenBody> {
                                   onPressed: () async {
                                     await launchUrl(
                                       Uri.parse(
-                                        "https://galileochampions.jaguergo.org/login",
+                                        "https://galileochampions.jaguergo.org/auth/forgot-password",
                                       ),
                                     );
                                   },
@@ -191,6 +195,8 @@ class _LoginScreenBodyState extends State<_LoginScreenBody> {
                               child: const Text("Registrarse"),
                             ),
                           ),
+                          const SizedBox(height: AppDimens.separatorSize),
+                          Text("Versión: $versionName")
                         ]),
                       ),
                     ),
@@ -216,6 +222,15 @@ class _LoginScreenBodyState extends State<_LoginScreenBody> {
         );
       },
     );
+  }
+
+  void getVersion() async {
+    var packageInfo = await PackageInfo.fromPlatform();
+    versionName = packageInfo.version;
+
+    setState(() {
+      versionName = packageInfo.version;
+    });
   }
 
   void _goToHome() {

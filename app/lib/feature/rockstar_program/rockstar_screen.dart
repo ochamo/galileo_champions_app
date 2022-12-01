@@ -96,19 +96,15 @@ class _RockstarScreenState extends State<_RockstarScreenBody> {
                             height: AppDimens.separatorSize,
                           )
                         : const SizedBox.shrink(),
-                    /*!state.isRockstar
-                        ? const SizedBox.shrink()
-                        : SizedBox(
-                            height: AppDimens.minHeightButtons,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.secondary),
-                              child: const Text(
-                                "¿Cómo participar?",
-                              ),
-                            ),
-                          ),*/
+                    Flexible(
+                      child: Text(
+                        state.isRockstar
+                            ? "Puedes canjear los puntos en el curso que quieras, enviandole un correo al catedrático de tu elección."
+                            : "",
+                        style: textTheme.headline6,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ],
                 ),
               ),
